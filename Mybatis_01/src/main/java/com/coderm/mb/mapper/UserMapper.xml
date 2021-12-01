@@ -9,4 +9,18 @@
     <select id="getUserById" parameterType="int" resultType="com.coderm.mb.pojo.User">
         select * from mybatis.user where id = #{id}
     </select>
+    <insert id="addUser" parameterType="com.coderm.mb.pojo.User">
+        insert into mybatis.user (id,name,pwd)
+        values (#{id},#{name},#{pwd});
+    </insert>
+    <update id="updateUser" parameterType="com.coderm.mb.pojo.User">
+        update mybatis.user
+        set name = #{name},pwd =#{pwd}
+        where id = #{id};
+    </update>
+    <delete id="deleteUserById" parameterType="int">
+        delete
+        from mybatis.user
+        where id = #{id};
+    </delete>
 </mapper>
