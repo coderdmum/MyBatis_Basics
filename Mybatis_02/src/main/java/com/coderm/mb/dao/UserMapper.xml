@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.coderm.mb.dao.UserMapper">
-    <select id="selectUser" resultType="com.coderm.mb.pojo.User">
+    <select id="selectUser" resultType="User">
         select * from mybatis.user
     </select>
 
@@ -11,18 +11,9 @@
         select * from mybatis.user where id = #{id}
     </select>
 
-    <select id="getUserByIdMap" parameterType="map" resultType="com.coderm.mb.pojo.User">
-        select * from mybatis.user where id = #{id} and name = #{name}
-    </select>
-
     <insert id="addUser" parameterType="com.coderm.mb.pojo.User">
         insert into mybatis.user (id,name,pwd)
         values (#{id},#{name},#{pwd});
-    </insert>
-
-    <insert id="addUser2" parameterType="map">
-        insert into mybatis.user (id,name,pwd)
-        values (#{userId},#{userName},#{userPwd});
     </insert>
 
     <update id="updateUser" parameterType="com.coderm.mb.pojo.User">

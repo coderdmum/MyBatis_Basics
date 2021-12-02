@@ -43,24 +43,6 @@ public class UserDaoTest {
 
         sqlSession.close();
     }
-    //使用map
-    @Test
-    public void getUserByIdMap(){
-        SqlSession sqlSession = MybatisUtils.getSqlSession();
-
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        Map<String,Object> map = new HashMap<>();
-        map.put("id", 1);
-        map.put("name", "coderm");
-
-        mapper.getUserByIdMap(map);
-
-        System.out.println(mapper.getUserByIdMap(map));
-
-
-
-        sqlSession.close();
-    }
 
     //增删改必须提交事务commit
     @Test
@@ -69,28 +51,6 @@ public class UserDaoTest {
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         mapper.addUser(new User(4, "coderq", "123456"));
         sqlSession.commit();
-
-
-
-        sqlSession.close();
-    }
-
-    //使用map
-    @Test
-    public void addUser2() {
-        SqlSession sqlSession = MybatisUtils.getSqlSession();
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        Map<String,Object> map = new HashMap<>();
-        map.put("userId", 5);
-        map.put("userName", "coderpp");
-        map.put("userPwd", "123456");
-
-        mapper.addUser2(map);
-
-        sqlSession.commit();
-
-
-
         sqlSession.close();
     }
 

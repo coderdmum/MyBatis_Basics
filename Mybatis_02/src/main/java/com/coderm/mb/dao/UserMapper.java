@@ -11,13 +11,8 @@ public interface UserMapper {
     //根据id查询用户
     User getUserById(int id);
 
-    User getUserByIdMap(Map<String,Object> map);
-
     //插入insert用户
     int addUser(User user);
-
-    //万能的map
-    int addUser2(Map<String, Object> map);
 
     //修改用户
     int updateUser(User user);
