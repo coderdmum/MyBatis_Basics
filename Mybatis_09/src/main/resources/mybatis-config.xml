@@ -7,6 +7,8 @@
     <settings>
         <!--标准的日志工厂实现-->
             <setting name="logImpl" value="STDOUT_LOGGING"/>
+            <setting name="mapUnderscoreToCamelCase" value="true"/>
+            <setting name="cacheEnabled" value="true"/>
 <!--        <setting name="logImpl" value="LOG4J"/>-->
     </settings>
     <typeAliases>
@@ -24,7 +26,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper class="com.coderm.mb.dao.blogMapper"/>
+        <mapper class="com.coderm.mb.dao.UserMapper"/>
     </mappers>
 
 </configuration>

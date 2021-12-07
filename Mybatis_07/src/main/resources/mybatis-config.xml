@@ -10,7 +10,8 @@
 <!--        <setting name="logImpl" value="LOG4J"/>-->
     </settings>
     <typeAliases>
-        <package name="com.coderm.mb.pojo"/>
+        <typeAlias type="com.coderm.mb.pojo.Teacher" alias="Teacher"></typeAlias>
+        <typeAlias type="com.coderm.mb.pojo.Student" alias="Student"></typeAlias>
     </typeAliases>
     <environments default="development">
         <environment id="development">
@@ -24,7 +25,8 @@
         </environment>
     </environments>
     <mappers>
-        <mapper class="com.coderm.mb.dao.blogMapper"/>
+        <mapper class="com.coderm.mb.dao.TeacherMapper"/>
+        <mapper class="com.coderm.mb.dao.StudentMapper"/>
     </mappers>
 
 </configuration>
